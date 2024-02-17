@@ -1,0 +1,17 @@
+.appContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 30%;
+}
+
+.restartButton {
+	font-size: 24px;
+	border-radius: 20px;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	background-color: rgb(255, 120, 37);
+	color: #fff;
+}
