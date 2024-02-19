@@ -1,21 +1,14 @@
 import styles from './field.module.css';
 
-export const FieldLayout = ({ field, setField, currentPlayer, setCurrentPlayer }) => {
+export const FieldLayout = ({ field, onClick }) => {
 	return (
 		<div className={styles.field}>
-			{field.map(({ id, label }) => {
+			{field.map(({ id, label }, index) => {
 				return (
 					<button
 						key={id}
 						onClick={() => {
-							let fieldCopy = field;
-							fieldCopy[id] = {
-								id: id,
-								label: currentPlayer,
-							};
-							setField(fieldCopy);
-							label = currentPlayer;
-							console.log(field, label, id);
+							onClick(index);
 						}}
 					>
 						{label}

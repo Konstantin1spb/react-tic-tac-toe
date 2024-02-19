@@ -1,13 +1,6 @@
 import styles from './information.module.css';
 
-export const InformationLayout = ({
-	isDraw,
-	setIsDraw,
-	isGameEnded,
-	setIsGameEnded,
-	currentPlayer,
-	setCurrentPlayer,
-}) => {
+export const InformationLayout = ({ isDraw, isGameEnded, currentPlayer }) => {
 	let infoText = '';
 	if (isDraw) {
 		infoText = 'Ничья';

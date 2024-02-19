@@ -3,33 +3,38 @@ import { Field } from './field/field.module';
 import styles from './app.module.css';
 
 export const AppLayout = ({
-	field,
-	setField,
-	isDraw,
-	setIsDraw,
-	isGameEnded,
-	setIsGameEnded,
-	currentPlayer,
 	setCurrentPlayer,
+	setIsGameEnded,
+	setIsDraw,
+	setField,
+	...props
 }) => {
 	return (
 		<>
 			<main className={styles.appContainer}>
-				<Information
-					isDraw={isDraw}
-					setIsDraw={setIsDraw}
-					isGameEnded={isGameEnded}
-					setIsGameEnded={setIsGameEnded}
-					currentPlayer={currentPlayer}
-					setCurrentPlayer={setCurrentPlayer}
-				></Information>
-				<Field
-					field={field}
-					setField={setField}
-					currentPlayer={currentPlayer}
-					setCurrentPlayer={setCurrentPlayer}
-				></Field>
-				<button className={styles.restartButton}>Начать заново</button>
+				<Information {...props}></Information>
+				<Field {...props}></Field>
+				<button
+					className={styles.restartButton}
+					onClick={() => {
+						setCurrentPlayer('x');
+						setIsGameEnded(false);
+						setIsDraw(false);
+						setField([
+							{ id: 0, label: '' },
+							{ id: 1, label: '' },
+							{ id: 2, label: '' },
+							{ id: 3, label: '' },
+							{ id: 4, label: '' },
+							{ id: 5, label: '' },
+							{ id: 6, label: '' },
+							{ id: 7, label: '' },
+							{ id: 8, label: '' },
+						]);
+					}}
+				>
+					Начать заново
+				</button>
 			</main>
 		</>
 	);
