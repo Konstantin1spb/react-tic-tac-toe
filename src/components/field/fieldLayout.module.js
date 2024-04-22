@@ -1,10 +1,9 @@
 import styles from './field.module.css';
-import { store } from '../../store';
 
-export const FieldLayout = ({ onCellClickHandler }) => {
+export const FieldLayout = ({ onCellClickHandler, field }) => {
 	return (
 		<div className={styles.field}>
-			{store.getState().map(({ id, label }, index) => {
+			{field.map(({ id, label }, index) => {
 				return (
 					<button
 						key={id}

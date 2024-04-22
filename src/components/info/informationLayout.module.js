@@ -1,6 +1,9 @@
 import styles from './information.module.css';
+import { selectIsDraw } from '../../selectors';
+import { useSelector } from 'react-redux';
 
-export const InformationLayout = ({ isDraw, isGameEnded, currentPlayer }) => {
+export const InformationLayout = ({ currentPlayer, isGameEnded }) => {
+	const isDraw = useSelector(selectIsDraw);
 	let infoText = '';
 	if (isDraw) {
 		infoText = 'Ничья';
